@@ -1,17 +1,238 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import 'base/reset', 'base/variablesgit ', 'base/fonts';
- *   |                       ^^^^^^^^^^^^^^^^^^^^
- *   '
- *   styles/scss/styles.scss 1:23  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import 'base/reset', 'base/variablesgit ', 'base/fonts';\a   \2502                        ^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   styles/scss/styles.scss 1:23  root stylesheet";
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
 }
+
+:root {
+  --grayish-blue: hsl(237, 18%, 59%);
+  --soft-red: hsl(345, 95%, 68%);
+  --white: hsl(0, 0%, 100%);
+  --dark-desaturated-blue: hsl(236, 21%, 26%);
+  --very-dark-blue: hsl(235, 16%, 14%);
+  --very-dark-mostly-blue: hsl(234, 17%, 12%);
+}
+
+.rb-app {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../images/pattern-hills.svg");
+  background-position: -840px bottom;
+  background-size: 380%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+@media screen and (min-width: 376px) {
+  .rb-app {
+    background-position: 0 bottom;
+    background-size: 100%;
+  }
+}
+.rb-app__title {
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 16px;
+  letter-spacing: 0.6rem;
+  margin: 180px 0 120px 0;
+  text-align: center;
+}
+@media screen and (min-width: 376px) {
+  .rb-app__title {
+    font-size: 20px;
+  }
+}
+.rb-app__countdown {
+  display: flex;
+  align-items: center;
+  max-width: 348px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 376px) {
+  .rb-app__countdown {
+    max-width: 100%;
+  }
+}
+.rb-app__footer {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media screen and (min-width: 376px) {
+  .rb-app__footer {
+    bottom: 70px;
+  }
+}
+
+.rb-countdown__box {
+  position: relative;
+  text-align: center;
+  margin: 0 6px;
+}
+@media screen and (min-width: 376px) {
+  .rb-countdown__box {
+    margin: 0 15px;
+  }
+}
+.rb-countdown__box:before {
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 1px;
+  background-color: var(--very-dark-mostly-blue);
+  opacity: 0.3;
+}
+@media screen and (min-width: 376px) {
+  .rb-countdown__box:before {
+    top: 70px;
+  }
+}
+.rb-countdown__box:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 75px;
+  height: 75px;
+  border-radius: 10px;
+  background-color: var(--very-dark-mostly-blue);
+}
+@media screen and (min-width: 376px) {
+  .rb-countdown__box:after {
+    width: 150px;
+    height: 150px;
+  }
+}
+.rb-countdown__insert {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75px;
+  height: 70px;
+  margin-bottom: 25px;
+}
+@media screen and (min-width: 376px) {
+  .rb-countdown__insert {
+    width: 150px;
+    height: 140px;
+  }
+}
+.rb-countdown__insert:after, .rb-countdown__insert:before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 50%;
+}
+.rb-countdown__insert:after {
+  top: 0;
+  background-color: var(--dark-desaturated-blue);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  opacity: 0.7;
+}
+.rb-countdown__insert:before {
+  bottom: 0;
+  background-color: var(--dark-desaturated-blue);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.rb-countdown__number {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: var(--soft-red);
+}
+@media screen and (min-width: 376px) {
+  .rb-countdown__number {
+    font-size: 78px;
+  }
+}
+.rb-countdown__number:before, .rb-countdown__number:after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 5px;
+  top: 34px;
+  background-color: var(--very-dark-mostly-blue);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: 0;
+}
+@media screen and (min-width: 376px) {
+  .rb-countdown__number:before, .rb-countdown__number:after {
+    top: 68px;
+  }
+}
+.rb-countdown__number:before {
+  left: -3px;
+  transform: rotate(90deg);
+}
+.rb-countdown__number:after {
+  right: -3px;
+  transform: rotate(-90deg);
+}
+.rb-countdown__text {
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  color: var(--grayish-blue);
+}
+@media screen and (min-width: 376px) {
+  .rb-countdown__text {
+    letter-spacing: 0.5rem;
+    font-size: 14px;
+  }
+}
+
+.rb-footer__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 -12px;
+}
+.rb-footer__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin: 0 12px;
+  transition: color 0.25s ease;
+}
+.rb-footer__link i {
+  font-size: 28px;
+  color: var(--grayish-blue);
+  transition: color 0.25s ease;
+}
+.rb-footer__link:hover i {
+  color: var(--soft-red);
+}
+
+body {
+  font-family: "Red Hat Text", sans-serif;
+  font-size: 14px;
+  background-color: var(--very-dark-blue);
+  background-image: url("../images/bg-stars.svg");
+  background-size: cover;
+}
+
+/*# sourceMappingURL=styles.css.map */
