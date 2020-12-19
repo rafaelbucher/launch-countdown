@@ -1,0 +1,30 @@
+.rb-footer {
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 -12px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin: 0 12px;
+    transition: color .25s ease;
+
+    i {
+      font-size: 28px;
+      color: var(--grayish-blue);
+      transition: color .25s ease;
+    }
+
+    &:hover {
+      i {
+        color: var(--soft-red);
+      }
+    }
+  }
+}

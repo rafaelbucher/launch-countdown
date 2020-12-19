@@ -1,23 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <head>
 
-  <title>Frontend Mentor | Launch countdown timer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-</head>
-<body>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="./styles/styles.css" rel="stylesheet">
 
-  We're launching soon
+    <title>Frontend Mentor | Launch countdown timer</title>
 
-  Days
-  Hours
-  Minutes
-  Seconds
+  </head>
+  <body>
 
-  <script src="js/main.js"></script>
-</body>
+    <main class="rb-app">
+
+      <div class="rb-app__container">
+
+        <h1 class="rb-app__title">We're launching soon</h1>
+
+        <div class="rb-app__countdown rb-countdown" id="countdown">
+
+          <div class="rb-countdown__box">
+            <div class="rb-countdown__insert">
+              <span class="rb-countdown__days rb-countdown__number""></span>
+            </div>
+            <div class="rb-countdown__text">Days</div>
+          </div>
+
+          <div class="rb-countdown__box">
+            <div class="rb-countdown__insert">
+              <span class="rb-countdown__hours rb-countdown__number"></span>
+            </div>
+            <div class="rb-countdown__text">Hours</div>
+          </div>
+
+          <div class="rb-countdown__box">
+            <div class="rb-countdown__insert">
+              <span class="rb-countdown__minutes rb-countdown__number"></span>
+            </div>
+            <div class="rb-countdown__text">Minutes</div>
+          </div>
+
+          <div class="rb-countdown__box">
+            <div class="rb-countdown__insert">
+              <span class="rb-countdown__seconds rb-countdown__number"></span>
+            </div>
+            <div class="rb-countdown__text">Seconds</div>
+          </div>
+
+        </div>
+
+        <div class="rb-app__footer rb-footer">
+
+          <ul class="rb-footer__list">
+
+            <li>
+              <a href="#" class="rb-footer__link"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+            </li>
+
+            <li>
+              <a href="#" class="rb-footer__link"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+            </li>
+
+            <li>
+              <a href="#" class="rb-footer__link"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </main>
+
+    <script src="script/main.js"></script>
+
+  </body>
+
 </html>
